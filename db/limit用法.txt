@@ -1,0 +1,7 @@
+select * from limit n
+表示显示n条记录
+
+select * from limit n,m
+表示从n+1条开始，显示m条
+
+select * from order by limit

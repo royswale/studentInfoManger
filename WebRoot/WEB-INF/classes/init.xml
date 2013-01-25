@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+ <factoryBean name="util.DBUtil.connectionFactory" class="util.DBUtil.connectionFactory" method="init">
+ <driverClass>org.gjt.mm.mysql.Driver</driverClass>
+ <initialPoolSize>10</initialPoolSize>
+ <jdbcUrl>jdbc:mysql://localhost/student</jdbcUrl>
+ <maxPoolSize>30</maxPoolSize>
+ <maxStatements>100</maxStatements>
+ <minPoolSize>8</minPoolSize>
+ <password>root</password>
+ <user>root</user>
+ <autoCommitOnClose>true</autoCommitOnClose>
+ </factoryBean>
+ <factoryCreate name="java.sql.Connection" class="util.DBUtil.connectionFactory" method="getConnection"/>
+<bean name="dao.studentDao" class="dao.impl.studentDaoImpl"/>
+<bean name="dao.messageDao" class="dao.impl.messageDaoImpl"/>
+<bean name="dao.messageHistoryDao" class="dao.impl.messageHistoryDaoImpl"/>
+<bean name="dao.professionDao" class="dao.impl.professionDaoImpl"/>
+<bean name="dao.sharedFileDao" class="dao.impl.sharedFileDaoImpl"/>
+<bean name="dao.studentDao" class="dao.impl.studentDaoImpl"/>
+<bean name="servicesDao.studentServicesDao" class="servicesDao.impl.studentDaoServicesImpl"/>
+<bean name="servicesDao.professionServicesDao" class="servicesDao.impl.professionServicesDaoImpl"/>
+<bean name="servicesDao.sharedFileServicesDao" class="servicesDao.impl.sharedFileServicesDaoImpl"/>
+</beans>
+
+
+
+
+
+
+
+
+
